@@ -1,9 +1,15 @@
 #Build a calculator to find out how much each person should pay equally in a bill considering the tip
 
 print("Welcome to the calculator!")
-bill = float(input("How much was the bill?"))
-tip = int(input("How much percent you want to tip?"))
-people = int(input("How many people wants to split the bill?"))
+complete = False
+while complete == False:
+    try:
+        bill = float(input("How much was the bill?"))
+        tip = int(input("How much percent you want to tip?"))
+        people = int(input("How many people wants to split the bill?"))
+        complete = True
+    except:
+        print("Please insert a valid number")
 
 p_tip = 1 + tip/100 #% tip
 p_bill = bill * p_tip #total with tip
